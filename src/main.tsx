@@ -1,5 +1,9 @@
 import ReactDOM from 'react-dom/client';
+import Router from "./routes";
+import React from 'react'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <h1>Hello, world!</h1>,
+    <React.StrictMode>
+      <Router />
+    </React.StrictMode>,
 );
