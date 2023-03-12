@@ -1,5 +1,5 @@
-import GlobalStyle from "../../assets/styles/global";
-import {Outlet} from "react-router-dom";
+import GlobalStyle from '../../assets/styles/global';
+import {Outlet} from 'react-router-dom';
 
 export function App () {
   return (
@@ -8,5 +8,5 @@ export function App () {
       <Outlet />
       <GlobalStyle />
     </>
-  )
+  );
 }
