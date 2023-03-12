@@ -1,12 +1,15 @@
-import GlobalStyle from '../../assets/styles/global';
+import GlobalStyle from '../../styles/global';
 import {Outlet} from 'react-router-dom';
+import { Header } from '../../components/Header';
+import { ThemeProvider } from 'styled-components';
+import defaultTheme from '../../styles/themes/default';
 
 export function App () {
   return (
-    <>
-      <h1>App</h1>
+    <ThemeProvider theme={defaultTheme}>
+      <Header />
       <Outlet />
       <GlobalStyle />
-    </>
+    </ThemeProvider>
   );
 }

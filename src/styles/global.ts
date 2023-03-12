@@ -8,6 +8,11 @@ export default createGlobalStyle`
     font-family: 'sora', sans-serif;
   }
 
+  body {
+    font-size: ${({ theme }) => theme.fonts.size};
+    background-color: ${({ theme }) => theme.colors.background};
+  }
+
   button {
     cursor: pointer;
   }
