@@ -1,4 +1,5 @@
 import type { ModuleOptions } from 'webpack';
+import * as path from 'path';
 
 export const rules: Required<ModuleOptions>['rules'] = [
   // Add support for native node modules
@@ -28,4 +29,12 @@ export const rules: Required<ModuleOptions>['rules'] = [
       },
     },
   },
+  // loads common image formats
+  {
+    test: /\.(svg|png|jpg|gif)$/,
+    include: [
+      path.resolve(__dirname, 'src/assets/images')
+    ],
+    type: 'asset/inline'
+  }
 ];
