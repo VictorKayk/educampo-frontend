@@ -6,12 +6,20 @@ export const Container = styled.header`
   max-width: 1280px;
   margin: 0 auto;
 
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
+  a {
+    text-decoration: none;
 
-    abbr {
-      text-decoration: none;
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+
+      abbr {
+        text-decoration: none;
+      }
     }
+  }
+
+  a:active {
+    color: ${({ theme }) => theme.colors.neutral.main};
   }
 `;
