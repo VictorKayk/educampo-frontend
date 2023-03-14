@@ -4,6 +4,10 @@ interface IDefaultTheme {
     neutral: {
       main: string;
       light: string;
+    },
+    primary: {
+      main: string;
+      dark: string;
     }
   },
   fonts: {
@@ -17,6 +21,10 @@ const DefaultTheme: IDefaultTheme = {
     neutral: {
       main: '#22264C',
       light: '#10263C'
+    },
+    primary: {
+      main: '#65E691',
+      dark: '#10263C'
     }
   },
   fonts: {
