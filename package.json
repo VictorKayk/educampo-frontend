@@ -1,8 +1,8 @@
 {
-  "name": "educampo_frontend",
-  "productName": "educampo_frontend",
+  "name": "educampo-frontend",
+  "productName": "Educampo - S.T.R.B",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Educampo - S.T.R.B",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
