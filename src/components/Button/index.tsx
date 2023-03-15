@@ -2,11 +2,12 @@ import { Container } from './styles';
 import { ReactNode } from 'react';
 
 interface ButtonProps {
+  type?: 'button' | 'submit';
   children: ReactNode;
 }
 
-export function Button({ children }: ButtonProps) {
+export function Button({ type, children }: ButtonProps) {
   return (
-    <Container type="button">{children}</Container>
+    <Container type={type || 'button'}>{children}</Container>
   );
 }
