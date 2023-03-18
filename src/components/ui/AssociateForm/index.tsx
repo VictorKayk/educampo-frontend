@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { Input } from '../Input';
 import { Select } from '../Select';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { associateFormInputs } from '../../types/AssociateFormInputs';
+import { associateFormInputs } from '../../../types/AssociateFormInputs';
 interface AssociateFormProps {
   buttonLabel: string;
   onSubmit: (associate: SubmitHandler<associateFormInputs>) => void;

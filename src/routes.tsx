@@ -1,5 +1,5 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import { App } from './layouts/App';
+import { App } from './components/layouts/App';
 import {Home} from './pages/Home';
 import { NewAssociate } from './pages/NewAssociate';
 

@@ -1,8 +1,8 @@
 import { Container, LoaderContainer, SearchBarButtonContainer } from './styles';
-import { SearchBar } from '../../components/SearchBar';
-import { Button } from '../../components/Button';
-import { Table } from '../../components/Table';
-import { Loader } from '../../components/Loader';
+import { SearchBar } from '../../components/ui/SearchBar';
+import { Button } from '../../components/ui/Button';
+import { Table } from '../../components/ui/Table';
+import { Loader } from '../../components/ui/Loader';
 import { useAssociates } from '../../hooks/useAssociates';
 import { Link } from 'react-router-dom';
 
