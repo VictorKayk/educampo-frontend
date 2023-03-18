@@ -1,20 +1,14 @@
-import { Container, SearchBarButtonContainer } from './styles';
+import { Container, LoaderContainer, SearchBarButtonContainer } from './styles';
 import { SearchBar } from '../../components/SearchBar';
 import { Button } from '../../components/Button';
 import { Table } from '../../components/Table';
+import { Loader } from '../../components/Loader';
+import { useAssociates } from '../../hooks/useAssociates';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { Associado } from '../../types/associative';
-import { api } from '../../utils/api';
 
 export function Home() {
-  const [associados, setAssociados] = useState<Associado[] | []>([]);
-
-  useEffect(() => {
-    api.get('/associados').then(response => {
-      setAssociados(response.data);
-    });
-  }, []);
+  const { getAssociates } = useAssociates();
+  const { isLoading, data, error } = getAssociates();
 
   return (
     <Container>
@@ -24,7 +18,13 @@ export function Home() {
           <Button>Novo</Button>
         </Link>
       </SearchBarButtonContainer>
-      <Table data={associados} />
+      {isLoading ? (
+        <LoaderContainer>
+          <Loader />
+        </LoaderContainer>
+      ) : <Table data={data} />}
+
+
     </Container>
   );
 }
