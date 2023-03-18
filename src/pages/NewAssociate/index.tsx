@@ -1,6 +1,6 @@
 import { Container } from './styles';
-import { PageHeader } from '../../components/PageHeader';
-import { AssociateForm } from '../../components/AssociateForm';
+import { PageHeader } from '../../components/ui/PageHeader';
+import { AssociateForm } from '../../components/ui/AssociateForm';
 import { api } from '../../utils/api';
 import { associateFormInputs } from '../../types/AssociateFormInputs';
 

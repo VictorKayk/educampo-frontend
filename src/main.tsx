@@ -3,7 +3,7 @@ import Router from './routes';
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeProvider } from 'styled-components';
-import defaultTheme from './styles/themes/default';
+import defaultTheme from './assets/styles/themes/default';
 
 const queryClient = new QueryClient();
 
