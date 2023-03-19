@@ -1,5 +1,6 @@
 export type associateFormInputs = {
   nome: string,
+  rg: string,
   estadoCivil: string,
   profissao: string,
   nomePai: string,
@@ -9,7 +10,7 @@ export type associateFormInputs = {
   nacionalidade: string,
   dataNascimento: string,
   rua: string,
-  numero: number,
+  numero: string,
   complemento: string,
   bairro: string,
   cep: string,
@@ -21,8 +22,8 @@ export type associateFormInputs = {
   carteiraSindical: string,
   cpf: string,
   celular: string,
-  filhosMenores: number,
-  filhosHomens: number,
-  filhosMulheres: number,
-  outrosDependentes: number,
+  filhosMenores: string,
+  filhosHomens: string,
+  filhosMulheres: string,
+  outrosDependentes: string,
 };
