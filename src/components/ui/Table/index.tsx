@@ -1,7 +1,7 @@
 import { TableBodyContainer, TableContainer, TableHeadContainer } from './styles';
 import { useMemo } from 'react';
 import { useTable } from 'react-table';
-import { Associado } from '../../../types/associative';
+import { Associado } from '../../../types/associate';
 
 
 interface TableProps {

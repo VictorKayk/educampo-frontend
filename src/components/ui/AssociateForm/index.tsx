@@ -2,11 +2,11 @@ import { Form } from './styles';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Select } from '../Select';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { associateFormInputs } from '../../../types/AssociateFormInputs';
 interface AssociateFormProps {
   buttonLabel: string;
-  onSubmit: (associate: SubmitHandler<associateFormInputs>) => void;
+  onSubmit: (associate: associateFormInputs) => void;
 }
 
 export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
@@ -22,14 +22,21 @@ export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
       </div>
 
       <div>
+        <Input
+          {...register('rg')}
+          placeholder="Rg"
+        />
+      </div>
+
+      <div>
         <Select
           {...register('estadoCivil')}
           placeholder='Estado Civil'
         >
-          <option value="solteiro">Solteiro</option>
-          <option value="casado">Casado</option>
-          <option value="divorciado">Divorciado</option>
-          <option value="viuvo">Viúvo</option>
+          <option value="SOLTEIRO">Solteiro</option>
+          <option value="CASADO">Casado</option>
+          <option value="DIVORCIADO">Divorciado</option>
+          <option value="VIUVO">Viúvo</option>
         </Select>
       </div>
 

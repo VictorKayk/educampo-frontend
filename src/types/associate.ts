@@ -1,61 +1,54 @@
-export interface CarteiraProfissional {
-  id: number;
+export interface ICarteiraProfissional {
   numero: number;
   serie: string;
 }
 
-export interface Dependentes {
+export interface IDependentes {
   filhosHomens: number;
   filhosMenores: number;
   filhosMulheres: number;
-  id: number;
   outrosDependentes: number;
 }
 
-export interface Endereco {
+export interface IEndereco {
   bairro: string;
   complemento: string;
   cpf: string;
-  id: number;
   numero: number;
   rua: string;
 }
 
-export interface Filiacao {
-  id: number;
+export interface IFiliacao {
   nomeMae: string;
   nomePai: string;
 }
 
-export interface FotoAssociado {
+export interface IFotoAssociado {
   contentType: string;
-  id: number;
   nomeArquivo: string;
   tamanho: number;
 }
 
-export interface Naturalidade {
+export interface INaturalidade {
   estado: string;
-  id: number;
   municipio: string;
 }
 
-export interface Associado {
-  carteiraProfissional: CarteiraProfissional;
+export interface IAssociado {
+  carteiraProfissional: ICarteiraProfissional;
   carteiraSindical: number;
   cpf: string;
   dataAssociacao: string;
-  dependentes: Dependentes;
-  edataNascimento: string;
+  dependentes: IDependentes;
+  dataNascimento: string;
   eleitor: boolean;
-  endereco: Endereco;
+  endereco: IEndereco;
   estadoCivil: string;
-  filiacao: Filiacao;
-  fotoAssociado: FotoAssociado;
-  id: number;
+  filiacao: IFiliacao;
+  fotoAssociado?: IFotoAssociado;
   localTrabalho: string;
   nacionalidade: string;
-  naturalidade: Naturalidade;
+  naturalidade: INaturalidade;
   nome: string;
   profissao: string;
   rg: string;
