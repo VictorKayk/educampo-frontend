@@ -2,6 +2,7 @@ import { TableBodyContainer, TableContainer, TableHeadContainer } from './styles
 import { useMemo } from 'react';
 import { useTable } from 'react-table';
 import { IAssociado } from '../../../types/associate';
+import { Link } from 'react-router-dom';
 
 
 interface TableProps {
@@ -30,6 +31,15 @@ export function Table({ data }: TableProps) {
       {
         Header: 'Data de Nascimento',
         accessor: 'dataNascimento',
+      },
+      {
+        Header: () => null,
+        id: 'view',
+        accessor: (row) => (
+          <Link to={`${row.id}`}>
+            <button>Visualizar</button>
+          </Link>
+        ),
       },
     ],
     []
@@ -60,7 +70,7 @@ export function Table({ data }: TableProps) {
         {rows.map((row, index) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()} key={index}>
+            <tr key={data[index].id} {...row.getRowProps()}>
               {row.cells.map((cell, index) => (
                 <td {...cell.getCellProps()} key={index}>
                   {cell.render('Cell')}
