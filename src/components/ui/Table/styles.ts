@@ -27,7 +27,7 @@ export const TableBodyContainer = styled.tbody`
     color: #000;
 
     td {
-      padding: 32px 24px;
+      padding: 24px;
     }
 
     td:first-child {

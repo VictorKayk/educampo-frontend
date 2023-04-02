@@ -2,6 +2,8 @@ import { TableBodyContainer, TableContainer, TableHeadContainer } from './styles
 import { useMemo } from 'react';
 import { useTable } from 'react-table';
 import { IAssociado } from '../../../types/associate';
+import { Link } from 'react-router-dom';
+import person from '../../../assets/images/icons/person.svg';
 
 
 interface TableProps {
@@ -11,6 +13,15 @@ interface TableProps {
 export function Table({ data }: TableProps) {
   const columns = useMemo(
     () => [
+      {
+        Header: '',
+        id: 'view',
+        accessor: (row) => (
+          <Link to={`${row.id}`}>
+            <img src={person} alt="Person Icon" width={38} />
+          </Link>
+        ),
+      },
       {
         Header: 'N°',
         accessor: 'carteiraSindical',
