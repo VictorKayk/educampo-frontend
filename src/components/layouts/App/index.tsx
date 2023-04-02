@@ -1,13 +1,14 @@
 import GlobalStyle from '../../../assets/styles/global';
-import {Outlet} from 'react-router-dom';
-import { Header } from '../../ui/Header';
+import { Outlet } from 'react-router-dom';
+import { Navbar } from '../../ui/Navbar';
+import { Container } from './styles';
 
-export function App () {
+export function App() {
   return (
-    <>
-      <Header />
+    <Container>
+      <Navbar />
       <Outlet />
       <GlobalStyle />
-    </>
+    </Container>
   );
 }
