@@ -3,21 +3,27 @@ import { useMemo } from 'react';
 import { useTable } from 'react-table';
 import { IAssociado } from '../../../types/associate';
 import { Link } from 'react-router-dom';
+import person from '../../../assets/images/icons/person.svg';
 
 
 interface TableProps {
-  data: IAssociado[];
+  data: IAssociado[] | [];
 }
 
 export function Table({ data }: TableProps) {
   const columns = useMemo(
     () => [
       {
-        Header: 'ID',
-        accessor: 'id',
+        Header: '',
+        id: 'view',
+        accessor: (row) => (
+          <Link to={`${row.id}`}>
+            <img src={person} alt="Person Icon" width={38} />
+          </Link>
+        ),
       },
       {
-        Header: 'Carteira Sindical',
+        Header: 'N°',
         accessor: 'carteiraSindical',
       },
       {
@@ -29,17 +35,8 @@ export function Table({ data }: TableProps) {
         accessor: 'cpf',
       },
       {
-        Header: 'Data de Nascimento',
+        Header: 'Data de nascimento',
         accessor: 'dataNascimento',
-      },
-      {
-        Header: () => null,
-        id: 'view',
-        accessor: (row) => (
-          <Link to={`${row.id}`}>
-            <button>Visualizar</button>
-          </Link>
-        ),
       },
     ],
     []

@@ -3,27 +3,26 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
 
-  padding: 12px 16px;
+  padding: 16px 24px;
 
   background-color: #fff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 
   input {
-    flex: 1;
-    width: 480px;
+    width: 360px;
     border: none;
     background-color: transparent;
     height: 100%;
-    font-size: ${({ theme }) => theme.fonts.size};
-    font-weight: bold;
-    color: ${({ theme }) => theme.colors.neutral.main};
     outline: none;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
 
     &::placeholder {
-      font-size: ${({ theme }) => theme.fonts.size};
+      color: rgba(0, 0, 0, 0.6);
       font-weight: bold;
     }
   }
