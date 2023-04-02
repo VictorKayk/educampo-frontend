@@ -1,9 +1,11 @@
 export interface ICarteiraProfissional {
+  id?: number;
   numero: number;
   serie: string;
 }
 
 export interface IDependentes {
+  id?: number;
   filhosHomens: number;
   filhosMenores: number;
   filhosMulheres: number;
@@ -11,6 +13,7 @@ export interface IDependentes {
 }
 
 export interface IEndereco {
+  id?: number;
   bairro: string;
   complemento: string;
   cpf: string;
@@ -19,22 +22,26 @@ export interface IEndereco {
 }
 
 export interface IFiliacao {
+  id?: number;
   nomeMae: string;
   nomePai: string;
 }
 
 export interface IFotoAssociado {
+  id?: number;
   contentType: string;
   nomeArquivo: string;
   tamanho: number;
 }
 
 export interface INaturalidade {
+  id?: number;
   estado: string;
   municipio: string;
 }
 
 export interface IAssociado {
+  id?: number;
   carteiraProfissional: ICarteiraProfissional;
   carteiraSindical: number;
   cpf: string;
