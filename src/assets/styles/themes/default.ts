@@ -7,7 +7,6 @@ interface IDefaultTheme {
     },
     primary: {
       main: string;
-      dark: string;
     }
   },
   fonts: {
@@ -17,14 +16,13 @@ interface IDefaultTheme {
 
 const DefaultTheme: IDefaultTheme = {
   colors: {
-    background: '#F5F5F5',
+    background: '#CBEBDD',
     neutral: {
       main: '#22264C',
       light: '#10263C'
     },
     primary: {
-      main: '#65E691',
-      dark: '#10263C'
+      main: '#00CC66',
     }
   },
   fonts: {
