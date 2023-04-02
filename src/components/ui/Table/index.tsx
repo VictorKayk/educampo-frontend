@@ -1,17 +1,35 @@
 import { TableBodyContainer, TableContainer, TableHeadContainer } from './styles';
 import { useMemo } from 'react';
 import { useTable } from 'react-table';
-import { Associado } from '../../../types/associate';
+import { IAssociado } from '../../../types/associate';
 
 
 interface TableProps {
-  data: Associado[] | [];
+  data: IAssociado[] | [];
 }
 
 export function Table({ data }: TableProps) {
-  const columns = useMemo(() => data[0] ? Object.keys(data[0])
-    .filter(key => ['nome', 'cpf', 'carteiraSindical', 'edataNascimento', 'profissao'].includes(key))
-    .map((key) => ({Header: key, accessor: key })) : [], [data]);
+  const columns = useMemo(
+    () => [
+      {
+        Header: 'N°',
+        accessor: 'carteiraSindical',
+      },
+      {
+        Header: 'Nome',
+        accessor: 'nome',
+      },
+      {
+        Header: 'CPF',
+        accessor: 'cpf',
+      },
+      {
+        Header: 'Data de nascimento',
+        accessor: 'dataNascimento',
+      },
+    ],
+    []
+  );
 
   const tableInstance = useTable({ columns, data });
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
