@@ -40,5 +40,5 @@ export const TableBodyContainer = styled.tbody`
       border-bottom-right-radius: 28px;
     }
   }
-
+}
 `;

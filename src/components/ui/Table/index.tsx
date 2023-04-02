@@ -42,8 +42,13 @@ export function Table({ data }: TableProps) {
     []
   );
 
-  const tableInstance = useTable({ columns, data });
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow
+  } = useTable({ columns, data });
 
   return (
     <TableContainer {...getTableProps()}>
@@ -52,7 +57,7 @@ export function Table({ data }: TableProps) {
           <tr {...headerGroup.getHeaderGroupProps()} key={index}>
             {headerGroup.headers.map((column, index) => (
               <th {...column.getHeaderProps()} key={index}>
-                {column.render('Header').toString().replace('_', ' ')}
+                {column.render('Header')}
               </th>
             ))}
           </tr>
@@ -62,7 +67,7 @@ export function Table({ data }: TableProps) {
         {rows.map((row, index) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()} key={index}>
+            <tr key={data[index].id} {...row.getRowProps()}>
               {row.cells.map((cell, index) => (
                 <td {...cell.getCellProps()} key={index}>
                   {cell.render('Cell')}
