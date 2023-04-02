@@ -1,19 +1,19 @@
-import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+import { Container, InputContainer, LabelContainer } from './styles';
 
-export const Input = styled.input`
-  width: 100%;
-  background: #fff;
-  border: 2px solid #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-  border-radius: 20px;
-  height: 52px;
-  outline: none;
-  padding: 0 16px;
-  font-size: 16px;
-  transition: all 0.2s ease-in;
-  appearance: none;
+interface InputProps {
+  label: string,
+  name: string,
+  type?: 'text' | 'number' | 'date'
+}
 
-  &:focus {
-    border-color: ${({ theme }) => theme.colors.neutral.main};
-  }
-`;
+export function Input({ label, name, type }: InputProps) {
+  const { register } = useForm();
+
+  return (
+    <Container>
+      <LabelContainer htmlFor={name}><h4>{label}</h4></LabelContainer>
+      <InputContainer id={name} {...register(name)} type={type || 'text'} />
+    </Container>
+  );
+}
