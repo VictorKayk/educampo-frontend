@@ -1,4 +1,4 @@
-import { Form } from './styles';
+import { Form, Content, GroupContainer, InputContainer, InputGroupContainer, TitleGroupContainer } from './styles';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Select } from '../Select';
@@ -10,225 +10,267 @@ interface AssociateFormProps {
 }
 
 export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
-  const { register, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <Input
-          {...register('nome')}
-          placeholder="Nome"
-        />
-      </div>
+      <Content>
+        <div>
+          <GroupContainer>
+            <TitleGroupContainer>
+              <h2>Dados Pessoais</h2>
+            </TitleGroupContainer>
+            <InputGroupContainer>
+              <InputContainer>
+                <Input
+                  label='Nome'
+                  name='nome'
+                />
+              </InputContainer>
 
-      <div>
-        <Input
-          {...register('rg')}
-          placeholder="Rg"
-        />
-      </div>
+              <InputContainer>
+                <Input
+                  label="CPF"
+                  name='cpf'
+                />
+              </InputContainer>
 
-      <div>
-        <Select
-          {...register('estadoCivil')}
-          placeholder='Estado Civil'
+              <InputContainer>
+                <Input
+                  label="RG"
+                  name='rg'
+                />
+              </InputContainer>
+
+              <InputContainer>
+                <Input
+                  label="Carteira sindical"
+                  name='carteiraSindical'
+                  type='number'
+                />
+              </InputContainer>
+
+              <InputContainer>
+                <Input
+                  label="Celular"
+                  name='celular'
+                />
+              </InputContainer>
+
+              <InputContainer>
+                <Input
+                  label="Data do nascimento"
+                  name='dataNascimento'
+                  type="date"
+                />
+              </InputContainer>
+
+              <InputContainer>
+                <Select
+                  name='estadoCivil'
+                  label='Estado Civil'
+                >
+                  <option value="SOLTEIRO">Solteiro</option>
+                  <option value="CASADO">Casado</option>
+                  <option value="DIVORCIADO">Divorciado</option>
+                  <option value="VIUVO">Viúvo</option>
+                </Select>
+              </InputContainer>
+
+              <InputContainer>
+                <Input
+                  label="Nacionalidade"
+                  name='nacionalidade'
+                />
+              </InputContainer>
+
+              <InputContainer>
+                <Input
+                  label="Profissão"
+                  name='profissao'
+                />
+              </InputContainer>
+
+              <InputContainer>
+                <Input
+                  label="Local onde trabalha"
+                  name='localTrabalho'
+                />
+              </InputContainer>
+
+              <InputContainer>
+                <Select
+                  name='sabeLer'
+                  label='Sabe ler?'
+                >
+                  <option value="true">Sim</option>
+                  <option value="false">Não</option>
+                </Select>
+              </InputContainer>
+
+              <InputContainer>
+                <Select
+                  name='eleitor'
+                  label='É eleitor?'
+                >
+                  <option value="true">Sim</option>
+                  <option value="false">Não</option>
+                </Select>
+              </InputContainer>
+            </InputGroupContainer>
+          </GroupContainer>
+
+          <GroupContainer>
+            <TitleGroupContainer>
+              <h2>Carteira de trabalho</h2>
+            </TitleGroupContainer>
+            <InputGroupContainer>
+              <InputContainer>
+                <Input
+                  label="Numero"
+                  name='numeroCarteiraTrabalho'
+                  type="number"
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Serie"
+                  name='serieCarteiraTrabalho'
+                />
+              </InputContainer>
+            </InputGroupContainer>
+          </GroupContainer>
+
+          <GroupContainer>
+            <TitleGroupContainer>
+              <h2>Filiação</h2>
+            </TitleGroupContainer>
+            <InputGroupContainer>
+              <InputContainer>
+                <Input
+                  label="Nome do pai"
+                  name='nomePai'
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Nome da mãe"
+                  name='nomeMae'
+                />
+              </InputContainer>
+            </InputGroupContainer>
+          </GroupContainer>
+
+          <GroupContainer>
+            <TitleGroupContainer>
+              <h2>Naturalidade</h2>
+            </TitleGroupContainer>
+            <InputGroupContainer>
+              <InputContainer>
+                <Input
+                  label="Municipio"
+                  name='municipio'
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Estado"
+                  name='estado'
+                />
+              </InputContainer>
+            </InputGroupContainer>
+          </GroupContainer>
+
+
+          <GroupContainer>
+            <TitleGroupContainer>
+              <h2>Endereço</h2>
+            </TitleGroupContainer>
+            <InputGroupContainer>
+              <InputContainer>
+                <Input
+                  label="Rua"
+                  name='rua'
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Numero"
+                  name='numero'
+                  type="number"
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Complemento"
+                  name='complemento'
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Bairro"
+                  name='bairro'
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="CEP"
+                  name='cep'
+                />
+              </InputContainer>
+            </InputGroupContainer>
+          </GroupContainer>
+
+
+          <GroupContainer>
+            <TitleGroupContainer>
+              <h2>Dependentes</h2>
+            </TitleGroupContainer>
+            <InputGroupContainer>
+              <InputContainer>
+                <Input
+                  label="Nome da esposa"
+                  name='nomeEsposa'
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Quantidade de filhos menores de 18 anos"
+                  name='filhosMenores'
+                  type="number"
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Quantidade de filhos do sexo masculino"
+                  name='filhosHomens'
+                  type="number"
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Quantidade de filhos do sexo feminino"
+                  name='filhosMulheres'
+                  type="number"
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  label="Quantidade de outros dependentes"
+                  name='outrosDependentes'
+                  type="number"
+                />
+              </InputContainer>
+            </InputGroupContainer>
+          </GroupContainer>
+        </div>
+
+        <Button
+          type="submit"
         >
-          <option value="SOLTEIRO">Solteiro</option>
-          <option value="CASADO">Casado</option>
-          <option value="DIVORCIADO">Divorciado</option>
-          <option value="VIUVO">Viúvo</option>
-        </Select>
-      </div>
-
-      <div>
-        <Input
-          {...register('profissao')}
-          placeholder="Profissão"
-        />
-      </div>
-
-      <div>
-        <div>
-          <Input
-            {...register('nomePai')}
-            placeholder="Nome do pai"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('nomeMae')}
-            placeholder="Nome da mãe"
-          />
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <Input
-            {...register('municipio')}
-            placeholder="Municipio"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('estado')}
-            placeholder="Estado"
-          />
-        </div>
-      </div>
-
-      <div>
-        <Input
-          {...register('nacionalidade')}
-          placeholder="Nacionalidade"
-        />
-      </div>
-
-      <div>
-        <Input
-          {...register('dataNascimento')}
-          placeholder="Date do nascimento"
-          type="date"
-        />
-      </div>
-
-
-      <div>
-        <div>
-          <Input
-            {...register('rua')}
-            placeholder="Rua"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('numero')}
-            placeholder="Numero"
-            type="number"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('complemento')}
-            placeholder="Complemento"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('bairro')}
-            placeholder="Bairro"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('cep')}
-            placeholder="CEP"
-          />
-        </div>
-      </div>
-
-      <div>
-        <Input
-          {...register('localTrabalho')}
-          placeholder="Local onde trabalha"
-        />
-      </div>
-
-      <div>
-        <div>
-          <Input
-            {...register('numeroCarteiraTrabalho')}
-            placeholder="Numero"
-            type="number"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('serieCarteiraTrabalho')}
-            placeholder="Serie"
-          />
-        </div>
-      </div>
-
-      <div>
-        <Input
-          {...register('sabeLer')}
-          placeholder="Sabe ler?"
-        />
-      </div>
-
-      <div>
-        <Input
-          {...register('eleitor')}
-          placeholder="É eleitor?"
-        />
-      </div>
-
-      <div>
-        <Input
-          {...register('carteiraSindical')}
-          placeholder="Carteira sindical"
-          type='number'
-        />
-      </div>
-
-
-      <div>
-        <Input
-          {...register('cpf')}
-          placeholder="CPF"
-        />
-      </div>
-
-      <div>
-        <Input
-          {...register('celular')}
-          placeholder="Celular"
-        />
-      </div>
-
-      <div>
-        <div>
-          <Input
-            {...register('nomeEsposa')}
-            placeholder="Nome da esposa"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('filhosMenores')}
-            placeholder="Quantidade de filhos menores de 18 anos"
-            type="number"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('filhosHomens')}
-            placeholder="Quantidade de filhos do sexo masculino"
-            type="number"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('filhosMulheres')}
-            placeholder="Quantidade de filhos do sexo feminino"
-            type="number"
-          />
-        </div>
-        <div>
-          <Input
-            {...register('outrosDependentes')}
-            placeholder="Quantidade de outros dependentes"
-            type="number"
-          />
-        </div>
-      </div>
-
-      <Button
-        type="submit"
-      >
-        {buttonLabel}
-      </Button>
+          {buttonLabel}
+        </Button>
+      </Content>
     </Form>
   );
 }
