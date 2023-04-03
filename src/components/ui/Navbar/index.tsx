@@ -22,7 +22,7 @@ export function Navbar() {
           </Link>
         </PageIconContainer>
         <PageIconContainer>
-          <Link to="/">
+          <Link to="/new">
             <img src={plus} alt="Plus icon" width='38px' />
           </Link>
         </PageIconContainer>
