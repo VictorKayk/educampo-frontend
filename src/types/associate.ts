@@ -16,7 +16,7 @@ export interface IEndereco {
   id?: number;
   bairro: string;
   complemento: string;
-  cpf: string;
+  cep: string;
   numero: number;
   rua: string;
 }
@@ -45,6 +45,7 @@ export interface IAssociado {
   carteiraProfissional: ICarteiraProfissional;
   carteiraSindical: number;
   cpf: string;
+  celular: string;
   dataAssociacao: string;
   dependentes: IDependentes;
   dataNascimento: string;

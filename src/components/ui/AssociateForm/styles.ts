@@ -28,12 +28,6 @@ export const GroupContainer = styled.div`
   gap: 32px;
 `;
 
-export const TitleGroupContainer = styled.div`
-  h2 {
-    font-size: 32px;
-  }
-`;
-
 export const InputGroupContainer = styled.div`
   display: flex;
   flex-direction: column;

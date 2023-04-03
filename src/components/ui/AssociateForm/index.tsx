@@ -1,9 +1,10 @@
-import { Form, Content, GroupContainer, InputContainer, InputGroupContainer, TitleGroupContainer } from './styles';
+import { Form, Content, GroupContainer, InputContainer, InputGroupContainer } from './styles';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Select } from '../Select';
 import { useForm } from 'react-hook-form';
 import { associateFormInputs } from '../../../types/AssociateFormInputs';
+import { Title } from '../Title';
 interface AssociateFormProps {
   buttonLabel: string;
   onSubmit: (associate: associateFormInputs) => void;
@@ -17,9 +18,9 @@ export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
       <Content>
         <div>
           <GroupContainer>
-            <TitleGroupContainer>
-              <h2>Dados Pessoais</h2>
-            </TitleGroupContainer>
+            <Title>
+              Dados Pessoais
+            </Title>
             <InputGroupContainer>
               <InputContainer>
                 <Input
@@ -121,9 +122,9 @@ export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
           </GroupContainer>
 
           <GroupContainer>
-            <TitleGroupContainer>
-              <h2>Carteira de trabalho</h2>
-            </TitleGroupContainer>
+            <Title>
+              Carteira de trabalho
+            </Title>
             <InputGroupContainer>
               <InputContainer>
                 <Input
@@ -142,9 +143,9 @@ export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
           </GroupContainer>
 
           <GroupContainer>
-            <TitleGroupContainer>
-              <h2>Filiação</h2>
-            </TitleGroupContainer>
+            <Title>
+              Filiação
+            </Title>
             <InputGroupContainer>
               <InputContainer>
                 <Input
@@ -162,9 +163,9 @@ export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
           </GroupContainer>
 
           <GroupContainer>
-            <TitleGroupContainer>
-              <h2>Naturalidade</h2>
-            </TitleGroupContainer>
+            <Title>
+              Naturalidade
+            </Title>
             <InputGroupContainer>
               <InputContainer>
                 <Input
@@ -183,9 +184,9 @@ export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
 
 
           <GroupContainer>
-            <TitleGroupContainer>
-              <h2>Endereço</h2>
-            </TitleGroupContainer>
+            <Title>
+              Endereço
+            </Title>
             <InputGroupContainer>
               <InputContainer>
                 <Input
@@ -223,9 +224,9 @@ export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
 
 
           <GroupContainer>
-            <TitleGroupContainer>
-              <h2>Dependentes</h2>
-            </TitleGroupContainer>
+            <Title>
+              Dependentes
+            </Title>
             <InputGroupContainer>
               <InputContainer>
                 <Input
