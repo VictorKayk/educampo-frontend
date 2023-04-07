@@ -1,21 +1,22 @@
-import { useForm } from 'react-hook-form';
+import { InputHTMLAttributes } from 'react';
 import { Container, InputContainer, LabelContainer } from './styles';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
-interface InputProps {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string,
   name?: string,
-  type?: 'text' | 'number' | 'date'
-  readOnly?: boolean
-  value?: string
+  register?: UseFormRegister<FieldValues>
 }
 
-export function Input({ label, name, type, readOnly, value }: InputProps) {
-  const { register } = useForm();
-
+export function Input({ label, name, register, ...rest }: InputProps) {
   return (
     <Container>
       <LabelContainer htmlFor={name}><h4>{label}</h4></LabelContainer>
-      <InputContainer id={name} {...register(name)} type={type || 'text'} readOnly={readOnly || false} value={value || null} />
+      <InputContainer
+        id={name}
+        {...rest}
+        {...register !== undefined ? { ...register(name) } : undefined}
+      />
     </Container>
   );
 }

@@ -23,6 +23,11 @@ export const SelectContainer = styled.select`
   &:focus {
     border: 2px solid ${({ theme }) => theme.colors.primary.main};
   }
+
+  &:disabled {
+    opacity: 1;
+    color: #000;
+  }
 `;
 
 export const LabelContainer = styled.label`

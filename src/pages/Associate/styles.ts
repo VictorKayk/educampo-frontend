@@ -27,7 +27,7 @@ export const GroupContainer = styled.div`
   flex-direction: column;
   gap: 32px;
 
-  >div {
+  > div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -36,8 +36,3 @@ export const GroupContainer = styled.div`
   }
 `;
 
-export const InputGroupContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-`;

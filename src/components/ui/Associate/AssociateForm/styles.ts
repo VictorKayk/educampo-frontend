@@ -26,14 +26,10 @@ export const GroupContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-`;
 
-export const InputGroupContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-`;
-
-export const InputContainer = styled.div`
-
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 `;

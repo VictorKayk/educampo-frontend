@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { TitleContainer } from "./styles";
+import { ReactNode } from 'react';
+import { TitleContainer } from './styles';
 
 interface TitleProps {
   children: ReactNode
@@ -10,5 +10,5 @@ export function Title({ children }: TitleProps) {
     <TitleContainer>
       {children}
     </TitleContainer>
-  )
+  );
 }

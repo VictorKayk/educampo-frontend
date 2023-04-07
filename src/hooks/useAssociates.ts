@@ -10,7 +10,7 @@ export function useAssociates() {
   function getAssociates() {
     return useQuery('associates-list', async () => {
       const response = await api.get('/associados');
-      return response.data  as IAssociado[] | [];
+      return response.data as IAssociado[] | [];
     });
   }
 

@@ -1,5 +1,5 @@
 import { Container, Content } from './styles';
-import { AssociateForm } from '../../components/ui/AssociateForm';
+import { AssociateForm } from '../../components/ui/Associate/AssociateForm';
 import { useAssociates } from '../../hooks/useAssociates';
 import { dateFormat } from '../../utils/dateFormat';
 
@@ -19,6 +19,7 @@ export function NewAssociate() {
             },
             carteiraSindical: Number(data.carteiraSindical),
             cpf: data.cpf,
+            celular: data.celular,
             dataAssociacao: dateFormat(new Date()),
             dataNascimento: data.dataNascimento,
             dependentes: {
@@ -31,11 +32,11 @@ export function NewAssociate() {
             endereco: {
               bairro: data.bairro,
               complemento: data.complemento,
-              cpf: data.cep,
+              cep: data.cep,
               numero: Number(data.numero),
               rua: data.rua,
             },
-            estadoCivil: data.estadoCivil.toUpperCase(),
+            estadoCivil: data.estadoCivil,
             filiacao: {
               nomeMae: data.nomeMae,
               nomePai: data.nomePai,
