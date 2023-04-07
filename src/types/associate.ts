@@ -40,25 +40,28 @@ export interface INaturalidade {
   municipio: string;
 }
 
-export interface IAssociado {
-  id?: number;
-  carteiraProfissional: ICarteiraProfissional;
+export interface IDadosPessoais {
   carteiraSindical: number;
   cpf: string;
   celular: string;
   dataAssociacao: string;
-  dependentes: IDependentes;
   dataNascimento: string;
   eleitor: boolean;
-  endereco: IEndereco;
   estadoCivil: string;
-  filiacao: IFiliacao;
-  fotoAssociado?: IFotoAssociado;
   localTrabalho: string;
   nacionalidade: string;
-  naturalidade: INaturalidade;
   nome: string;
   profissao: string;
   rg: string;
   sabeLer: boolean;
+}
+
+export interface IAssociado extends IDadosPessoais {
+  id?: number;
+  carteiraProfissional: ICarteiraProfissional;
+  dependentes: IDependentes;
+  endereco: IEndereco;
+  filiacao: IFiliacao;
+  fotoAssociado?: IFotoAssociado;
+  naturalidade: INaturalidade;
 }
