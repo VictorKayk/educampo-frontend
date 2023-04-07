@@ -14,9 +14,30 @@ export function useAssociates() {
     });
   }
 
+  function getAssociatesOrAssociateByName(name?: string) {
+    return useQuery(name ? 'associates-list' : ['associates-list', name], async () => {
+      let response;
+      if (name) {
+        response = await api.get(`/associados/nome/${name}`);
+        response.data = [response.data];
+      } else {
+        response = await api.get('/associados');
+      }
+      return response.data as IAssociado[] | [];
+    });
+  }
+
   function getAssociateById(id: string) {
     return useQuery(['associates-list', id], async () => {
       const response = await api.get(`/associados/${id}`);
+      return response.data as IAssociado;
+    });
+  }
+
+  function getAssociateByName(name: string) {
+    console.log(name);
+    return useQuery(['associates-list', name], async () => {
+      const response = await api.get(`/associados/nome/${name}`);
       return response.data as IAssociado;
     });
   }
@@ -35,6 +56,8 @@ export function useAssociates() {
   return {
     getAssociates,
     createNewAssociate,
-    getAssociateById
+    getAssociateById,
+    getAssociateByName,
+    getAssociatesOrAssociateByName
   };
 }
