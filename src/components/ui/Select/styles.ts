@@ -9,7 +9,7 @@ export const Container = styled.div`
 export const SelectContainer = styled.select`
   background-color: transparent;
   outline: none;
-  padding: 12px 24px 16px 32px;
+  padding: 12px 24px 16px 24px;
   font-size: 16px;border: 2px solid #000000;
   border-radius: 10px;
   transition: all 0.1s ease-in;
