@@ -1,13 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 24px;
-
-  & > button {
-    width: 100%;
-  }
 `;
 
 export const Content = styled.div`
@@ -22,14 +18,29 @@ export const Content = styled.div`
   }
 `;
 
-export const GroupContainer = styled.div`
+interface GroupContainerProps {
+  direction?: 'row' | 'column';
+}
+
+export const GroupContainer = styled.div<GroupContainerProps>`
   display: flex;
   flex-direction: column;
   gap: 32px;
 
-  > div {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
+  ${props => props.direction === 'column' ?
+    css`
+      > div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 24px;
+        column-gap: 16px;
+      }
+  ` : css`
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+  `}
 `;

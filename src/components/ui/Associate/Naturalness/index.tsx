@@ -19,7 +19,7 @@ export function Naturalness({ data, readOnly, register }: NaturalnessProps) {
           label="Municipio"
           name='municipio'
           readOnly={readOnly}
-          value={data?.municipio || undefined}
+          defaultValue={data?.municipio || undefined}
           register={register}
         />
 
@@ -28,7 +28,7 @@ export function Naturalness({ data, readOnly, register }: NaturalnessProps) {
           label="Estado"
           name='estado'
           readOnly={readOnly}
-          value={data?.estado || undefined}
+          defaultValue={data?.estado || undefined}
           register={register}
         />
 

@@ -35,7 +35,6 @@ export function useAssociates() {
   }
 
   function getAssociateByName(name: string) {
-    console.log(name);
     return useQuery(['associates-list', name], async () => {
       const response = await api.get(`/associados/nome/${name}`);
       return response.data as IAssociado;
@@ -53,11 +52,24 @@ export function useAssociates() {
     });
   }
 
+  function updateAssociate(id: string) {
+    return useMutation(async (data: IAssociado) => {
+      const response = await api.put('/associados', data);
+      return response.data;
+    }, {
+      onSuccess: () => {
+        queryClient.invalidateQueries('associates-list');
+        queryClient.invalidateQueries(['associates-list', id]);
+      }
+    });
+  }
+
   return {
     getAssociates,
     createNewAssociate,
     getAssociateById,
     getAssociateByName,
-    getAssociatesOrAssociateByName
+    getAssociatesOrAssociateByName,
+    updateAssociate
   };
 }
