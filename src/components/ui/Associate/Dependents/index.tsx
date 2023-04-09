@@ -19,7 +19,7 @@ export function Dependents({ data, readOnly, register }: DependentsProps) {
           label='Filhos homens'
           name='filhosHomens'
           readOnly={readOnly}
-          value={data?.filhosHomens || undefined}
+          defaultValue={data?.filhosHomens || undefined}
           register={register}
         />
 
@@ -27,7 +27,7 @@ export function Dependents({ data, readOnly, register }: DependentsProps) {
           label='Filhas mulheres'
           name='filhosMulheres'
           readOnly={readOnly}
-          value={data?.filhosMulheres || undefined}
+          defaultValue={data?.filhosMulheres || undefined}
           register={register}
         />
 
@@ -35,7 +35,7 @@ export function Dependents({ data, readOnly, register }: DependentsProps) {
           label='Filhos menores'
           name='filhosMenores'
           readOnly={readOnly}
-          value={data?.filhosMenores || undefined}
+          defaultValue={data?.filhosMenores || undefined}
           register={register}
         />
 
@@ -43,7 +43,7 @@ export function Dependents({ data, readOnly, register }: DependentsProps) {
           label='Outros dependentes'
           name='outrosDependentes'
           readOnly={readOnly}
-          value={data?.outrosDependentes || undefined}
+          defaultValue={data?.outrosDependentes || undefined}
           register={register}
         />
       </div>
