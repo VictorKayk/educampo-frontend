@@ -6,6 +6,8 @@ import { Loader } from '../../components/ui/Loader';
 import { dateFormat } from '../../utils/dateFormat';
 import { associateFormInputs } from '../../types/AssociateFormInputs';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
+import { SuccessfulToast } from '../../components/ui/SuccessfulToast';
 
 export function Associate() {
   const { id } = useParams<{ id: string }>();
@@ -16,6 +18,11 @@ export function Associate() {
 
   function handleSubmit(associateFormInput: associateFormInputs) {
     if (readOnly) return setReadOnly(false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
 
     mutate({
       id: +id,
@@ -71,6 +78,7 @@ export function Associate() {
     });
 
     setReadOnly(true);
+    toast.success('Associado editado!');
   }
 
   return (
@@ -80,15 +88,18 @@ export function Associate() {
           <Loader />
         </LoaderContainer>
       ) : (
-        <Content>
-          <AssociateForm
-            buttonLabel={readOnly ? 'Editar' : 'Salvar'}
-            data={data}
-            readOnly={readOnly}
-            onSubmit={handleSubmit}
-            direction='column'
-          />
-        </Content>
+        <>
+          <Content>
+            <AssociateForm
+              buttonLabel={readOnly ? 'Editar' : 'Salvar'}
+              data={data}
+              readOnly={readOnly}
+              onSubmit={handleSubmit}
+              direction='column'
+            />
+          </Content>
+          <SuccessfulToast />
+        </>
       )}
     </Container >
   );

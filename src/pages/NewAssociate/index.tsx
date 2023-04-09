@@ -3,13 +3,20 @@ import { AssociateForm } from '../../components/ui/Associate/AssociateForm';
 import { useAssociates } from '../../hooks/useAssociates';
 import { dateFormat } from '../../utils/dateFormat';
 import { associateFormInputs } from '../../types/AssociateFormInputs';
+import { toast } from 'react-toastify';
+import { SuccessfulToast } from '../../components/ui/SuccessfulToast';
 
 export function NewAssociate() {
   const { createNewAssociate } = useAssociates();
   const { mutate } = createNewAssociate();
 
   function handleSubmit(data: associateFormInputs) {
-    return mutate({
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
+    mutate({
       carteiraProfissional: {
         numero: Number(data.numeroCarteiraTrabalho),
         serie: data.serieCarteiraTrabalho,
@@ -54,16 +61,22 @@ export function NewAssociate() {
       rg: data.rg,
       sabeLer: data.sabeLer === 'true' ? true : false
     });
+
+    toast.success('Associado salvo!');
   }
 
   return (
-    <Container>
-      <Content>
-        <AssociateForm
-          buttonLabel={'Salvar'}
-          onSubmit={handleSubmit}
-        />
-      </Content>
-    </Container>
+    <>
+      <Container>
+        <Content>
+          <AssociateForm
+            buttonLabel={'Salvar'}
+            onSubmit={handleSubmit}
+            resetData
+          />
+        </Content>
+      </Container>
+      <SuccessfulToast />
+    </>
   );
 }

@@ -13,13 +13,20 @@ import { IAssociado } from '../../../../types/associate';
 interface AssociateFormProps {
   buttonLabel: string;
   onSubmit: (associate: associateFormInputs) => void;
+  resetData?: boolean
   readOnly?: boolean
   data?: IAssociado;
   direction?: 'row' | 'column'
 }
 
-export function AssociateForm({ buttonLabel, onSubmit, data, readOnly, direction }: AssociateFormProps) {
-  const { handleSubmit, register } = useForm();
+export function AssociateForm({ buttonLabel, onSubmit: onSubmitAssociate, resetData, data, direction, readOnly }: AssociateFormProps) {
+  const { handleSubmit, register, reset } = useForm();
+
+  function onSubmit(associate: associateFormInputs) {
+    onSubmitAssociate(associate);
+
+    if (resetData) reset();
+  }
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
