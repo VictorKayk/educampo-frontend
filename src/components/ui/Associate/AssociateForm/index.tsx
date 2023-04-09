@@ -12,13 +12,20 @@ import { Dependents } from '../Dependents';
 interface AssociateFormProps {
   buttonLabel: string;
   onSubmit: (associate: associateFormInputs) => void;
+  resetData?: boolean
 }
 
-export function AssociateForm({ buttonLabel, onSubmit }: AssociateFormProps) {
+export function AssociateForm({ buttonLabel, onSubmit, resetData }: AssociateFormProps) {
   const { handleSubmit, register, reset } = useForm();
 
+  function a(associate: associateFormInputs) {
+    onSubmit(associate);
+
+    if (resetData) reset();
+  }
+
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(a)}>
       <Content>
         <div>
           <GroupContainer>
