@@ -19,7 +19,7 @@ export function Affiliation({ data, readOnly, register }: AffiliationProps) {
           label='Nome da mãe'
           name='nomeMae'
           readOnly={readOnly}
-          value={data?.nomeMae || undefined}
+          defaultValue={data?.nomeMae || undefined}
           register={register}
         />
 
@@ -28,7 +28,7 @@ export function Affiliation({ data, readOnly, register }: AffiliationProps) {
           label='Nome do pai'
           name='nomePai'
           readOnly={readOnly}
-          value={data?.nomePai || undefined}
+          defaultValue={data?.nomePai || undefined}
           register={register}
         />
 

@@ -19,7 +19,7 @@ export function Address({ data, readOnly, register }: AddressProps) {
           label='CEP'
           name='cep'
           readOnly={readOnly}
-          value={data?.cep || undefined}
+          defaultValue={data?.cep || undefined}
           register={register}
         />
 
@@ -27,7 +27,7 @@ export function Address({ data, readOnly, register }: AddressProps) {
           label='Bairro'
           name='bairro'
           readOnly={readOnly}
-          value={data?.bairro || undefined}
+          defaultValue={data?.bairro || undefined}
           register={register}
         />
 
@@ -35,7 +35,7 @@ export function Address({ data, readOnly, register }: AddressProps) {
           label='Rua'
           name='rua'
           readOnly={readOnly}
-          value={data?.rua || undefined}
+          defaultValue={data?.rua || undefined}
           register={register}
         />
 
@@ -43,7 +43,7 @@ export function Address({ data, readOnly, register }: AddressProps) {
           label='Numero'
           name='numero'
           readOnly={readOnly}
-          value={data?.numero || undefined}
+          defaultValue={data?.numero || undefined}
           register={register}
         />
 
@@ -51,7 +51,7 @@ export function Address({ data, readOnly, register }: AddressProps) {
           label='Complemento'
           name='complemento'
           readOnly={readOnly}
-          value={data?.complemento || undefined}
+          defaultValue={data?.complemento || undefined}
           register={register}
         />
       </div>

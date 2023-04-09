@@ -23,7 +23,7 @@ export function ProfessionalCard({ data, readOnly, register }: ProfissionalCardP
           register={register}
           type="number"
           readOnly={readOnly}
-          value={data?.numero || undefined}
+          defaultValue={data?.numero || undefined}
         />
 
 
@@ -32,7 +32,7 @@ export function ProfessionalCard({ data, readOnly, register }: ProfissionalCardP
           name='serieCarteiraTrabalho'
           register={register}
           readOnly={readOnly}
-          value={data?.serie || undefined}
+          defaultValue={data?.serie || undefined}
         />
 
       </div>

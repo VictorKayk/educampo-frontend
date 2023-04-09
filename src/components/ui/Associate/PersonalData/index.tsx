@@ -24,7 +24,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           name='nome'
           register={register}
           readOnly={readOnly}
-          value={data?.nome || undefined}
+          defaultValue={data?.nome || undefined}
         />
 
         <Input
@@ -32,7 +32,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           name='cpf'
           register={register}
           readOnly={readOnly}
-          value={data?.cpf || undefined}
+          defaultValue={data?.cpf || undefined}
         />
 
         <Input
@@ -40,7 +40,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           name='rg'
           register={register}
           readOnly={readOnly}
-          value={data?.rg || undefined}
+          defaultValue={data?.rg || undefined}
         />
 
         <Input
@@ -49,7 +49,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           register={register}
           type='number'
           readOnly={readOnly}
-          value={data?.carteiraSindical || undefined}
+          defaultValue={data?.carteiraSindical || undefined}
         />
 
         <Input
@@ -57,7 +57,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           name='celular'
           register={register}
           readOnly={readOnly}
-          value={data?.celular || undefined}
+          defaultValue={data?.celular || undefined}
         />
 
         <Input
@@ -66,7 +66,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           register={register}
           type="date"
           readOnly={readOnly}
-          value={data?.dataNascimento || undefined}
+          defaultValue={data?.dataNascimento || undefined}
         />
 
         <Select
@@ -74,7 +74,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           register={register}
           label='Estado Civil'
           readOnly={readOnly}
-          value={data?.estadoCivil || undefined}
+          defaultValue={data?.estadoCivil || undefined}
         >
           <option value="SOLTEIRO">Solteiro</option>
           <option value="CASADO">Casado</option>
@@ -87,7 +87,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           name='nacionalidade'
           register={register}
           readOnly={readOnly}
-          value={data?.nacionalidade || undefined}
+          defaultValue={data?.nacionalidade || undefined}
         />
 
         <Input
@@ -95,7 +95,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           name='profissao'
           register={register}
           readOnly={readOnly}
-          value={data?.profissao || undefined}
+          defaultValue={data?.profissao || undefined}
         />
 
         <Input
@@ -103,7 +103,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           name='localTrabalho'
           register={register}
           readOnly={readOnly}
-          value={data?.localTrabalho || undefined}
+          defaultValue={data?.localTrabalho || undefined}
         />
 
         <Select
@@ -111,7 +111,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           register={register}
           label='Sabe ler?'
           readOnly={readOnly}
-          value={data?.sabeLer !== undefined ? data?.sabeLer === false ? 'false' : 'true' : undefined}
+          defaultValue={data?.sabeLer !== undefined ? data?.sabeLer === false ? 'false' : 'true' : undefined}
         >
           <option value="true">Sim</option>
           <option value="false">Não</option>
@@ -122,7 +122,7 @@ export function PersonalData({ register, readOnly, data }: PersonalDataProps) {
           register={register}
           label='É eleitor?'
           readOnly={readOnly}
-          value={data?.eleitor !== undefined ? data?.eleitor === false ? 'false' : 'true' : undefined}
+          defaultValue={data?.eleitor !== undefined ? data?.eleitor === false ? 'false' : 'true' : undefined}
         >
           <option value="true">Sim</option>
           <option value="false">Não</option>

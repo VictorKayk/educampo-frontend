@@ -50,7 +50,7 @@ export function AssociateForm({ buttonLabel, onSubmit, data, readOnly, direction
           </GroupContainer>
         </div>
 
-        <Button>
+        <Button type='submit'>
           {buttonLabel}
         </Button>
       </Content>
