@@ -19,17 +19,17 @@ interface AssociateFormProps {
   direction?: 'row' | 'column'
 }
 
-export function AssociateForm({ buttonLabel, onSubmit, resetData, data, direction, readOnly }: AssociateFormProps) {
+export function AssociateForm({ buttonLabel, onSubmit: onSubmitAssociate, resetData, data, direction, readOnly }: AssociateFormProps) {
   const { handleSubmit, register, reset } = useForm();
 
-  function a(associate: associateFormInputs) {
-    onSubmit(associate);
+  function onSubmit(associate: associateFormInputs) {
+    onSubmitAssociate(associate);
 
     if (resetData) reset();
   }
 
   return (
-    <Form onSubmit={handleSubmit(a)}>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <Content>
         <div>
           <GroupContainer direction={direction}>
